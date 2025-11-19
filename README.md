@@ -15,7 +15,6 @@ This project is documented across several files. For a complete understanding of
 
 The project is organized into the following directories:
 
-*   `/.github/workflows`: Contains CI/CD pipeline configurations for GitHub Actions.
 *   `/src`: Contains a sample Python Flask application that serves as a placeholder for the self-healing service logic.
 *   `/terraform`: Contains the Terraform code for the project's infrastructure.
 *   `/use_cases`: Contains documentation and code for specific use cases of the platform.
