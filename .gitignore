@@ -23,7 +23,11 @@ override.tf.json
 
 # Sensitive files
 github-actions-key.json
-*.json
-
 # Other generated files
 otherdocs/
+
+# IDE files
+.idx/
+
+# Source folder
+src/
