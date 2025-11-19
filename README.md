@@ -1,18 +1,24 @@
 # Cloud FinOps and MLOps Project
 
-This project provides a comprehensive solution for managing cloud costs and implementing MLOps on Google Cloud Platform (GCP). The project is divided into three main phases:
+This project provides a comprehensive solution for managing cloud costs and implementing MLOps on Google Cloud Platform (GCP).
 
-*   **Phase 1: Foundational Setup**: Establishes the basic GCP infrastructure using Terraform, including networking, security, and IAM.
-*   **Phase 2: DataOps**: Implements data pipelines for cost monitoring and analysis using services like BigQuery and Dataflow.
-*   **Phase 3: MLOps**: Focuses on machine learning model development and deployment with Vertex AI.
+## Project Documentation
+
+This project is documented across several files. For a complete understanding of the project, please review the following documents:
+
+*   **[ARCHITECTURE.md](ARCHITECTURE.md)**: Provides a high-level overview of the system design and the interaction between the different components.
+*   **[GCP_SETUP.md](GCP_SETUP.md)**: Outlines the necessary steps to configure your Google Cloud project before deploying the infrastructure.
+*   **[terraform/README.md](terraform/README.md)**: Details the Infrastructure as Code (IaC) setup for the four phases of the project.
+*   **[use_cases/gke_monitoring_and_healing/README.md](use_cases/gke_monitoring_and_healing/README.md)**: Describes the specific use case for monitoring a GKE cluster and implementing a self-healing mechanism.
 
 ## Project Structure
 
 The project is organized into the following directories:
 
 *   `/.github/workflows`: Contains CI/CD pipeline configurations for GitHub Actions.
-*   `/src`: Includes the Python source code for the application logic.
-*   `/terraform`: Contains the Terraform code for infrastructure as code (IaC), with separate subdirectories for each phase.
+*   `/src`: Contains a sample Python Flask application that serves as a placeholder for the self-healing service logic.
+*   `/terraform`: Contains the Terraform code for the project's infrastructure.
+*   `/use_cases`: Contains documentation and code for specific use cases of the platform.
 
 ## Getting Started
 
