@@ -1,53 +1,30 @@
-# To learn more about how to use Nix to configure your environment
-# see: https://developers.google.com/idx/guides/customize-idx-env
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
   channel = "stable-24.05"; # or "unstable"
-  # Use https://search.nixos.org/packages to find packages
+
+  # A list of packages to make available in your workspace.
+  # For a searchable list of available packages, see https://search.nixos.org/packages
   packages = [
-    # pkgs.go
-    # pkgs.python311
-    # pkgs.python311Packages.pip
-    # pkgs.nodejs_20
-    # pkgs.nodePackages.nodemon
+    pkgs.python3
+    pkgs.google-cloud-sdk
   ];
-  # Sets environment variables in the workspace
-  env = {};
+
+  # Environment variables to set in your workspace.
+  env = {
+  };
+
+  # Used to configure your VS Code extensions and workspace settings.
+  # For more details, see https://www.jetpack.io/devbox/docs/ide-integration/vscode/
   idx = {
-    # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
+    # A list of extensions to install from the Open VSX Registry.
+    # See https://open-vsx.org/ for available extensions.
     extensions = [
-      # "vscodevim.vim"
-      "google.gemini-cli-vscode-ide-companion"
+      "ms-python.python"
+      "googlecloudtools.cloudcode"
     ];
-    # Enable previews
-    previews = {
-      enable = true;
-      previews = {
-        # web = {
-        #   # Example: run "npm run dev" with PORT set to IDX's defined port for previews,
-        #   # and show it in IDX's web preview panel
-        #   command = ["npm" "run" "dev"];
-        #   manager = "web";
-        #   env = {
-        #     # Environment variables to set for your server
-        #     PORT = "$PORT";
-        #   };
-        # };
-      };
-    };
-    # Workspace lifecycle hooks
     workspace = {
-      # Runs when a workspace is first created
       onCreate = {
-        # Example: install JS dependencies from NPM
-        # npm-install = "npm install";
-        # Open editors for the following files by default, if they exist:
-        default.openFiles = [ ".idx/dev.nix" "README.md" ];
-      };
-      # Runs when the workspace is (re)started
-      onStart = {
-        # Example: start a background task to watch and re-build backend code
-        # watch-backend = "npm run watch-backend";
+        install-deps = "pip install -r requirements.txt";
       };
     };
   };
